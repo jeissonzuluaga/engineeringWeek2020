@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EngineeringWeek2020.Views.IndexPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title=".::  INICIO  ::.">
+
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Index}">
+            <StackLayout
+                BackgroundColor="White"
+                Padding="8">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="35"
+                    HorizontalOptions="Center"
+                    Text="IV Semana de la Ingeniería 2020 UCC"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"/>
+
+                <Image
+                    Source="LogoWeek.png"
+                    WidthRequest="500">
+                </Image>
+
+                <Image
+                    Source="Guest.png"
+                    WidthRequest="300">
+                </Image>
+
+                <Image
+                    Source="Scheduling.png"
+                    WidthRequest="400">
+                </Image>
+
+                <Image
+                    Source="LogoUCC.png"
+                    WidthRequest="300">
+                </Image>
+
+                <StackLayout
+                    Margin="10,10"
+                    Orientation="Horizontal">
+
+                    <Button
+                    BackgroundColor="DarkGreen"
+                    Command="{Binding SignUpCommand}"
+                    CornerRadius="23"
+                    FontSize="16"
+                    HeightRequest="46"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Text="Registrar Poster"
+                    TextColor="White">
+                    </Button>
+
+                    <Button
+                    BackgroundColor="DarkGreen"
+                    Command="{Binding RegistrationCommand}"
+                    CornerRadius="23"
+                    FontSize="16"
+                    HeightRequest="46"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Text="Inscripción Juegos"
+                    TextColor="White">
+                    </Button>
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

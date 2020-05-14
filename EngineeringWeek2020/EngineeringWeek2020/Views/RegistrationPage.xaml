@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EngineeringWeek2020.Views.RegistrationPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title=".:: Inscripción de VideoJuegos ::.">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="White"
+            BindingContext="{Binding Registration}"
+            Padding="5,10">
+            <Image
+                HeightRequest="150"
+                Source="videogame.jpeg"
+                >
+            </Image>
+            <Label
+                FontSize="35"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="Inscripciones para VideoJuegos"
+                VerticalOptions="Center">
+            </Label>
+            <Grid
+                Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    FontSize="Large"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Nombres:"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Placeholder="Digite nombres"
+                    Text="{Binding Name, Mode=TwoWay}">
+                </Entry>
+
+                <Label
+                    FontSize="Large"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Apellidos:"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="Digite apellidos"
+                    Text="{Binding LastName, Mode=TwoWay}">
+                </Entry>
+
+                <Label
+                    FontSize="Large"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Doc. Identidad:"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    Placeholder="Digite número de C.C."
+                    Text="{Binding Identif, Mode=TwoWay}">
+                </Entry>
+
+                <Label
+                    FontSize="Large"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="No.ID UCC:"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    Placeholder="Digite número ID institucional"
+                    Text="{Binding IdUCC, Mode=TwoWay}">
+                </Entry>
+
+                <Label
+                    FontSize="Large"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Email:"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Keyboard="Email"
+                    Placeholder="Digite correo electrónico"
+                    Text="{Binding Email, Mode=TwoWay}">
+                </Entry>
+
+                <Label
+                    FontSize="Large"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="No. Teléfono:"
+                    TextColor="Black"
+                    VerticalOptions="Center">
+                </Label>
+                <Entry
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Keyboard="Numeric"
+                    Placeholder="Digite número de celular"
+                    Text="{Binding Cel, Mode=TwoWay}">
+                </Entry>
+            </Grid>
+
+            <Button
+                    BackgroundColor="DarkGreen"
+                    Command="{Binding SubmitRCommand}"
+                    CornerRadius="23"
+                    FontSize="16"
+                    HeightRequest="46"
+                    HorizontalOptions="Center"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Text="Enviar"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="250">
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
